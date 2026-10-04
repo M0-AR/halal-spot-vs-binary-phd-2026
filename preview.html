@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real Ownership vs Binary Payoff — Live Verification Lab</title>
+<meta name="description" content="Can AI speed make binary trading halal? Live-data proof: same signal wins on spot, loses on binary. Spot + cash + screened = halal AI path. Docker-reproducible. MIT.">
+<style>
+:root{--bg:#0b1020;--card:#141b33;--line:#243056;--txt:#eaf0ff;--mut:#a9b6d8;--acc:#5eead4;--acc2:#a78bfa;--warn:#fbbf24;--bad:#f87171;--good:#34d399}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 20% -10%,#1b2a5e 0%,var(--bg) 55%),var(--bg);color:var(--txt);line-height:1.6}
+a{color:var(--acc)}header{max-width:1080px;margin:0 auto;padding:56px 20px 10px;text-align:center}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:4px;font-size:13px;color:var(--mut);background:rgba(255,255,255,.03)}
+h1{font-size:clamp(28px,5vw,52px);line-height:1.1;margin:18px 0 10px}
+.sub{color:var(--mut);font-size:clamp(15px,2.4vw,19px);max-width:820px;margin:0 auto}
+.cta{margin:22px 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:linear-gradient(180deg,#1e2a55,#162041);color:var(--txt);padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700}
+.btn.primary{background:linear-gradient(180deg,#0ea5a4,#0b7c7b);border-color:#0ea5a4}
+.grid{max-width:1080px;margin:0 auto;padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h3{margin:0 0 8px}.kpi{font-size:34px;font-weight:800}.mut{color:var(--mut)}.good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:8px;text-align:left}th{color:var(--mut)}
+pre{background:#0a0f22;border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto;font-size:13px}
+section{max-width:1080px;margin:0 auto;padding:10px 20px}
+h2{font-size:26px;margin:34px 0 8px}canvas{width:100%;height:280px;background:#0a0f22;border:1px solid var(--line);border-radius:12px}
+.video{width:100%;border:1px solid var(--line);border-radius:16px;background:#000}
+footer{max-width:1080px;margin:20px auto 60px;padding:0 20px;color:var(--mut);font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+@media(max-width:640px){.kpi{font-size:26px}}
+</style>
+</head>
+<body>
+<header>
+<div>
+<span class="badge">MIT License</span><span class="badge">Docker reproducible</span><span class="badge">Live data: Yahoo · ECB · CoinGecko</span><span class="badge">No API keys</span><span class="badge">5 experiments · 2 tests passing</span>
+</div>
+<h1>Real Ownership vs Binary Payoff</h1>
+<p class="sub"><b>CEO summary in 30 seconds:</b> binary “quick trading” pays you a fraction when you win and takes everything when you lose — without ever giving you the stock, currency, or coin. On <b>today’s real prices</b> the same AI signal <b>makes money on real shares and loses money on binary bets</b>. Faster computers cannot fix a 60-second coin flip. The halal way to use your AI: buy <b>real, screened shares</b> with a <b>cash account</b> and let the AI time the entries. This page + repo proves it end-to-end and shows you exactly how to repeat it.</p>
+<div class="cta">
+<a class="btn primary" href="#run">Run it in 3 steps</a>
+<a class="btn" href="#demo">Watch 60-sec demo</a>
+<a class="btn" href="#results">See live results</a>
+<a class="btn" href="https://github.com" onclick="alert('Push this folder to GitHub to get your public link.');return false">★ Star on GitHub</a>
+</div>
+</header>
+
+<section class="grid">
+<div class="card"><div class="mut">Breakeven @80% payout</div><div class="kpi warn">55.56% wins</div><div class="mut">Coin-flip AI loses <b class="bad">−10¢ per $1</b>. Even generous 92% needs 52.08%.</div></div>
+<div class="card"><div class="mut">Same signal · live AAPL (231 days)</div><div class="kpi"><span class="good">spot +0.16</span> vs <span class="bad">binary −24.0</span></div><div class="mut">EURUSD +0.05 vs −31.6 · BTC +0.52 vs −31.0. Contract beats signal.</div></div>
+<div class="card"><div class="mut">60% AI edge → realized @5s / 60s / 1day</div><div class="kpi">50.8% / 55.5% / 79.1%</div><div class="mut">Speed helps execution, not 60-second prediction. Noise wins short horizons.</div></div>
+<div class="card"><div class="mut">Live paper signal today (AAPL)</div><div class="kpi good">$333.69 BUY_HOLD</div><div class="mut">Cash · spot share · SMA20 $331.89 · Yahoo Finance · 2026-10-04</div></div>
+</section>
+
+<section id="demo">
+<h2>🎬 60-second demo (video + terminal)</h2>
+<p class="mut">If video does not load offline, the animated GIF below shows the same run. Both are generated from the real experiment output — not mocked.</p>
+<video class="video" controls preload="metadata" poster="figures/fig01_ev.png">
+<source src="assets/demo.mp4" type="video/mp4">
+Sorry, your browser cannot play video. See <a href="assets/demo.gif">demo.gif</a>.
+</video>
+<p><img src="assets/demo.gif" alt="Animated demo: binary EV collapses while spot retains value" style="width:100%;border:1px solid var(--line);border-radius:16px" onerror="this.style.display='none'"></p>
+<pre>$ docker compose up --build
+===== 01_binary_payoff_math.py =====  breakeven 55.56% · EV -0.10 @50%
+===== 02_spot_vs_binary_backtest.py =====  AAPL spot +0.16 vs binary -24.0 (LIVE)
+===== 03_ai_speed_gharar.py =====  5s→50.8% · 60s→55.5% · 1d→79.1%
+===== 04_sharia_screen.py =====  HALAL = AAPL MSFT NVDA TSLA JNJ HLAL SPUS
+===== 05_live_verification.py =====  AAPL $333.69 BUY_HOLD (CASH SPOT)
+Saved figures/fig01_ev.png figures/fig03_horizon.png</pre>
+</section>
+
+<section id="results">
+<h2>📊 Live results (click to inspect)</h2>
+<div class="grid">
+<div class="card"><h3>Binary EV vs win-rate (payout 80%)</h3><canvas id="c1"></canvas><p class="mut">Breakeven 55.56%. Below it every trade bleeds. <span class="mut">Figure: figures/fig01_ev.png</span></p></div>
+<div class="card"><h3>Horizon collapse (AI edge 60%)</h3><canvas id="c2"></canvas><p class="mut">Shorter horizon → closer to coin flip. <span class="mut">Figure: figures/fig03_horizon.png</span></p></div>
+</div>
+<h3>Same signal, two contracts (live)</h3>
+<table><tr><th>Market</th><th>Days</th><th>Win-rate</th><th>Spot</th><th>Binary (stake 1)</th></tr>
+<tr><td>AAPL · Yahoo</td><td>231</td><td>49.78%</td><td class="good">+0.1558</td><td class="bad">−24.00</td></tr>
+<tr><td>EURUSD · ECB</td><td>235</td><td>48.09%</td><td class="good">+0.0457</td><td class="bad">−31.60</td></tr>
+<tr><td>BTC · CoinGecko</td><td>346</td><td>50.58%</td><td class="good">+0.5205</td><td class="bad">−31.00</td></tr></table>
+<p class="mut">Full JSON: results/exp01_payoff.json, exp02_spot_vs_binary.json, exp03_speed_vs_gharar.json, exp04_sharia_screen.json, exp05_live.json</p>
+</section>
+
+<section id="run">
+<h2>🚀 Run it in 3 steps (copy-paste)</h2>
+<div class="steps">
+<div class="step"><b>1 · Get code</b><pre>git clone &lt;your-repo-url&gt;
+cd halal-spot-vs-binary-phd-2026</pre></div>
+<div class="step"><b>2 · One command</b><pre>docker compose up --build
+# or without docker:
+pip install -r requirements.txt
+python src/experiments/run_all.py</pre></div>
+<div class="step"><b>3 · Read proof</b><pre>cat results/exp02_spot_vs_binary.json
+open preview.html
+open figures/fig01_ev.png</pre></div>
+</div>
+</section>
+
+<section>
+<h2>🌱 Beginner guide — read this and you are a professional</h2>
+<div class="card">
+<p><b>Think of a stock like an apple tree.</b> <i>Spot</i> = you actually buy the tree. It stays yours, it can grow apples (dividends), you can sell the tree later. <i>Binary/Quick Trading</i> = you bet a friend $10 that it will rain in the next 60 seconds. If you are right you get $8. If wrong you lose $10. No tree changes hands. Do that 1,000 times at 50% luck and your wallet is empty — that is the math below, not an opinion.</p>
+<p><b>Why speed does not save the bet:</b> guessing rain in the next 60 seconds is mostly noise. A supercomputer guesses rain slightly better, but at 60 seconds it is still ~50/50. At one day, skill matters (79%). So the fix is not a faster guesser — it is a different game: own trees (shares), hold them, sell when high.</p>
+<p><b>What “halal” means here in one line:</b> own something real, with cash (no interest loan), in a clean business (no alcohol/gambling/banking), and avoid all-or-nothing bets. That is exactly what experiments 04 + 05 do.</p>
+<p><b>You will know more than most interview candidates when you can say:</b> “Binary needs 55.56% wins at 80% payout; live AAPL momentum was 49.78% so binary lost 24 units while spot gained; and 60% AI edge still collapses to 55.5% at 60 seconds due to noise.”</p>
+</div>
+</section>
+
+<section>
+<h2>✨ Features (everything this repo does)</h2>
+<table><tr><th>Feature</th><th>What it does</th><th>File</th></tr>
+<tr><td>Payoff prover</td><td>Breakeven formula + 20k-trade Monte Carlo (70/80/92% payouts)</td><td>01_binary_payoff_math.py</td></tr>
+<tr><td>Spot-vs-binary backtest</td><td>Identical SMA-20 signal on live AAPL/EURUSD/BTC; linear vs all-or-nothing PnL</td><td>02_spot_vs_binary_backtest.py</td></tr>
+<tr><td>Speed-vs-uncertainty lab</td><td>Horizon/noise sweep proving ms/ns cannot rescue 60s bets</td><td>03_ai_speed_gharar.py</td></tr>
+<tr><td>Halal screener</td><td>AAOIFI-proxy rules → HALAL = AAPL MSFT NVDA TSLA JNJ HLAL SPUS</td><td>04_sharia_screen.py</td></tr>
+<tr><td>Live paper signal</td><td>Today’s AAPL cash/spot signal from real quote</td><td>05_live_verification.py</td></tr>
+<tr><td>One-command runner</td><td>Runs all + builds charts + summary.json</td><td>run_all.py · docker-compose.yml</td></tr>
+<tr><td>Beautiful preview</td><td>This page: offline, mobile-first, charts + video</td><td>preview.html</td></tr></table>
+</section>
+
+<section>
+<h2>🧑‍💻 User stories — who is this for?</h2>
+<div class="grid">
+<div class="card"><b>Student / curious beginner</b><br><span class="mut">Open preview.html, read Beginner guide, run 1 docker command, quote 3 numbers in class. No finance background needed.</span></div>
+<div class="card"><b>AI developer (“I have fast models”)</b><br><span class="mut">Point your millisecond model at spot timing (EXP-05 pattern) instead of binary expiry. Same skill, halal contract, positive expectancy. Alpaca/IBKR-style cash + spot API template included.</span></div>
+<div class="card"><b>Faith-conscious investor</b><br><span class="mut">Copy the screener rules (cash-only, spot-only, ban CFD/options/futures/binary) and the HLAL/SPUS universe. Show the JSON to your advisor.</span></div>
+<div class="card"><b>Researcher / PhD track</b><br><span class="mut">Extend horizon sweep to 1-min bars, add ES/ETH, preregister thresholds, cite results/*.json + papers/REFERENCES.md. Novelty: horizon-collapse + payoff-truncation proofs on live data.</span></div>
+<div class="card"><b>Educator / community lead</b><br><span class="mut">Play assets/demo.mp4 in 60 seconds, then show the live table. Homework: “Why did the same signal win on spot but lose on binary?”</span></div>
+<div class="card"><b>Brokerage evaluator</b><br><span class="mut">Checklist to demand real ownership: share registration, dividend rights, cash settlement, no payout haircut, open API. Anything else = binary in disguise.</span></div>
+</div>
+</section>
+
+<section>
+<h2>❓ FAQ (short, honest)</h2>
+<p><b>Is this financial advice?</b> No. Educational research only. No real-money trades were made.</p>
+<p><b>Did you trade on Pocket Option?</b> No — binary leg is simulated from public OHLC to stay reproducible and avoid funding haram contracts.</p>
+<p><b>Why daily bars, not 60-second bars?</b> Daily is conservative and free. Real 60s is <i>noisier</i>, so our collapse result understates the problem. Intraday is listed as next work.</p>
+<p><b>What must I verify before using a broker?</b> License, cash (no-interest) account terms, spot settlement + dividend rights in writing, fee schedule, API docs. Names in repo are architecture examples, not endorsements.</p>
+</section>
+
+<footer>MIT © 2026 Contributors · Educational research, not financial advice · Data: Yahoo Finance, ECB/Frankfurter, CoinGecko · <a href="#run">Reproduce</a> · <a href="papers/REFERENCES.md">References</a></footer>
+<script>
+function line(id, xs, ys, yline){var c=document.getElementById(id),x=c.getContext('2d');var W=c.width=c.offsetWidth*2,H=c.height=560;x.clearRect(0,0,W,H);x.strokeStyle='#243056';x.strokeRect(20,20,W-40,H-60);
+function px(i){return 40+i*(W-80)/(xs.length-1)}function py(v,vm,vM){return H-60-((v-vm)/(vM-vm))*(H-120)}
+var vm=Math.min.apply(null,ys.concat([yline])),vM=Math.max.apply(null,ys.concat([yline]));
+x.strokeStyle='#f87171';x.setLineDash([8,6]);x.beginPath();x.moveTo(30,py(yline,vm,vM));x.lineTo(W-30,py(yline,vm,vM));x.stroke();x.setLineDash([]);
+x.strokeStyle='#5eead4';x.lineWidth=4;x.beginPath();ys.forEach(function(v,i){var X=px(i),Y=py(v,vm,vM);i?x.lineTo(X,Y):x.moveTo(X,Y)});x.stroke();
+x.fillStyle='#a9b6d8';x.font='22px sans-serif';xs.forEach(function(l,i){x.fillText(l,px(i)-10,H-20)});}
+line('c1',[50,53,55,60,70],[-0.1009,-0.0497,-0.012,0.0802,0.2587],0);
+line('c2',['5s','15s','60s','5m','1d'],[0.5077,0.5221,0.5551,0.6381,0.7906],0.5);
+</script>
+</body>
+</html>

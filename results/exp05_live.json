@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-10-04T19:49:22.771170Z",
+  "symbol": "AAPL",
+  "last_close": 333.69,
+  "sma20": 331.89,
+  "signal": "BUY_HOLD",
+  "source": "yahoo",
+  "account": "CASH",
+  "instrument": "SPOT_SHARE",
+  "ownership": "real-share-registered-in-name + dividend rights (via Alpaca/IBKR broker)",
+  "rows_used": 126
+}

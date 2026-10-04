@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "ticker": "AAPL",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "MSFT",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "NVDA",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "TSLA",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "JNJ",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "HLAL",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "SPUS",
+      "pass": true,
+      "reasons": []
+    },
+    {
+      "ticker": "BUD",
+      "pass": false,
+      "reasons": [
+        "banned-sector",
+        "noncompliant 0.9>=0.05"
+      ]
+    },
+    {
+      "ticker": "LVS",
+      "pass": false,
+      "reasons": [
+        "banned-sector",
+        "noncompliant 0.95>=0.05"
+      ]
+    },
+    {
+      "ticker": "JPM",
+      "pass": false,
+      "reasons": [
+        "banned-sector",
+        "debt 0.5>=0.30",
+        "noncompliant 0.8>=0.05"
+      ]
+    }
+  ],
+  "halal_universe": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "TSLA",
+    "JNJ",
+    "HLAL",
+    "SPUS"
+  ],
+  "rules": {
+    "cash_only": true,
+    "spot_only": true,
+    "banned_instruments": [
+      "CFD",
+      "Options",
+      "Futures",
+      "Margin",
+      "Binary"
+    ],
+    "note": "Use Zoya/Musaffa/AAOIFI APIs for production fundamentals; logic here is deterministic and tested."
+  }
+}

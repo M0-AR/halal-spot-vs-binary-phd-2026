@@ -1,0 +1,15 @@
+# Verified references (fetched live during research, Oct 2026)
+
+1. Pocket Option self-description — Quick Trading = forecast direction, fixed timeframe, fixed payout, **without owning underlying**. Source: pocketoption.com blog "Is Pocket Option a Binary Trading Platform" (via DuckDuckGo lite fetch, 2026-10-04).
+2. Wikipedia — Binary option: "payoff is either some fixed monetary amount or nothing at all... also called all-or-nothing, digital, fixed return options." `Binary option` summary, fetched 2026-10-04.
+3. Maleki (2026, SSRN) — "Retail Trading in Binary Options: Evidence from Nadex": retail positions earn **-9.9% average return** before fees; realized payoff rates below costs. Found via unified paper-search (crossref/openalex), Oct 2026.
+4. Budiharseno et al. (2024) — "Binary options trading: deep dive": 14,341 Binomo reviews, prevalence of negative sentiment, fraud/withdrawal concerns. Via OpenAlex.
+5. Dixon (2017, arXiv 1710.03870) — HFT execution model: fill probabilities + position rules dominate ML edge; trade information matrix attributes P&L to correct/incorrect predictions under execution constraints.
+6. Carmona & Webster (2017, arXiv 1709.02015) — HFT microstructure: superior information ≠ insider; ignoring frictions misstates wealth exchanged by 50%.
+7. TradeFM (2026, arXiv 2602.23784) — foundation model over billions of trade events reproduces heavy tails, volatility clustering, no return autocorrelation — why 60s prediction is intrinsically hard.
+8. Sharia screening literature (OpenAlex 2021-2024): Sabila (2024) on screening-criteria divergence; Mustafida & Fauziah (2021) ESG-in-screening; Aisah et al. (2022) systematic review of halal vs conventional stocks (gharar objection addressed via ownership + screening).
+9. Live-market anchors (no-key, reproducible): Yahoo Finance AAPL quote 2026-10-04 (~$333.69, source yfinance); ECB/Frankfurter USD→EUR 0.89087, GBP 0.75753, JPY 157.67 (2026-10-02); CoinGecko BTC 7-day 83.5k→85.4k. Fetched via MCP stock/FX/crypto tools.
+10. Broker/API docs (public): Alpaca Markets (FINRA, cash accounts, Python/WS API, Musaffa/Ayaan integrations); Interactive Brokers (IBKR API + ib-insync); Tabadulat (AAOIFI-screened spot + compliance tooling). Verify on vendor docs before funding; this repo uses only public market data, no broker keys.
+11. Reproducibility best practice: Docker + pinned requirements + synthetic-GBM fallback + `results/*.json` + `figures/*.png` so any reviewer can `docker compose up` and reproduce without keys.
+
+Search backends polled sequentially (one-at-a-time to avoid 429): websearch/Exa (503 → DuckDuckGo-lite fallback OK), SearXNG (unreachable → skipped), agent-reach/web (unavailable → skipped), openresearch web/HN/SO/news/OpenAlex, paper-search unified + arXiv, duckduckgo_search, gsd_websearch, superpowers semantic, gitmcp docs, kaggle everything/kernels, wiki. Voting: binary=negative-EV + no-ownership consensus across academic + encyclopedic + retail-evidence sources; spot+cash+screened = halal-path consensus.

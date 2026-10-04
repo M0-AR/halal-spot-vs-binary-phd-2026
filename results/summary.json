@@ -1,0 +1,10 @@
+{
+  "status": "all-passed",
+  "exps": [
+    "01_binary_payoff_math.py",
+    "02_spot_vs_binary_backtest.py",
+    "03_ai_speed_gharar.py",
+    "04_sharia_screen.py",
+    "05_live_verification.py"
+  ]
+}

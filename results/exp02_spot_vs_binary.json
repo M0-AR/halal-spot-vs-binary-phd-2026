@@ -1,0 +1,32 @@
+{
+  "AAPL_live": {
+    "n": 231,
+    "win_rate": 0.4978,
+    "spot_total": 0.1558,
+    "spot_mean": 0.000675,
+    "binary_total_stake1": -24.0,
+    "binary_ev": -0.1039,
+    "spot_sharpe_like": 0.0432,
+    "source": "yahoo"
+  },
+  "EURUSD_live": {
+    "n": 235,
+    "win_rate": 0.4809,
+    "spot_total": 0.0457,
+    "spot_mean": 0.000194,
+    "binary_total_stake1": -31.6,
+    "binary_ev": -0.1345,
+    "spot_sharpe_like": 0.0567,
+    "source": "frankfurter"
+  },
+  "BTC_live": {
+    "n": 346,
+    "win_rate": 0.5058,
+    "spot_total": 0.5197,
+    "spot_mean": 0.001502,
+    "binary_total_stake1": -31.0,
+    "binary_ev": -0.0896,
+    "spot_sharpe_like": 0.0646,
+    "source": "coingecko"
+  }
+}

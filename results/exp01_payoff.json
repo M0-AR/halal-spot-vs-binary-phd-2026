@@ -1,0 +1,63 @@
+{
+  "payouts": {
+    "0.7": {
+      "breakeven_win_rate": 0.5882352941176471
+    },
+    "0.8": {
+      "breakeven_win_rate": 0.5555555555555556
+    },
+    "0.92": {
+      "breakeven_win_rate": 0.5208333333333334
+    }
+  },
+  "simulations": [
+    {
+      "win_rate": 0.5,
+      "payout": 0.8,
+      "ev_per_trade": -0.1009,
+      "total_20k": -2018.0
+    },
+    {
+      "win_rate": 0.53,
+      "payout": 0.8,
+      "ev_per_trade": -0.0497,
+      "total_20k": -993.8
+    },
+    {
+      "win_rate": 0.55,
+      "payout": 0.8,
+      "ev_per_trade": -0.012,
+      "total_20k": -239.6
+    },
+    {
+      "win_rate": 0.6,
+      "payout": 0.8,
+      "ev_per_trade": 0.0802,
+      "total_20k": 1603.6
+    },
+    {
+      "win_rate": 0.7,
+      "payout": 0.8,
+      "ev_per_trade": 0.2587,
+      "total_20k": 5174.8
+    },
+    {
+      "win_rate": 0.5,
+      "payout": 0.92,
+      "ev_per_trade": -0.0481,
+      "total_20k": -961.3
+    },
+    {
+      "win_rate": 0.52,
+      "payout": 0.92,
+      "ev_per_trade": -0.0065,
+      "total_20k": -129.9
+    },
+    {
+      "win_rate": 0.55,
+      "payout": 0.92,
+      "ev_per_trade": 0.0472,
+      "total_20k": 943.4
+    }
+  ]
+}
